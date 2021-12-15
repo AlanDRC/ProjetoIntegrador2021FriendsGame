@@ -1,0 +1,36 @@
+﻿@model List<PROJETO01.Modelos.Fornecedorjogos>
+
+<h3>
+    CADASTRO DE FORNECEDOR 
+    <a class="btn btn-sm btn-primary float-right" href="/Fornecedorjogos/Adicionar">
+        + ADICIONAR
+    </a>
+</h3>
+
+<table class="table table-hover ">
+    <thead>
+        <tr>
+            <th>Tipo de Jogo</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.codFornecedor</td>
+            <td>@item.nomefornecedor</td>
+            <td>@item.Descricaofornecedor</td>
+            <td>
+                <a href="/Fornecedorjogos/Editar?codFornecedor=@item.codFornecedor" class="btn btn-sm btn-warning">
+                    Editar
+                </a>
+                <a href="/Fornecedorjogos/Excluir?codFornecedor=@item.codFornecedor" class="btn btn-sm btn-danger">
+                    Excluir
+                </a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

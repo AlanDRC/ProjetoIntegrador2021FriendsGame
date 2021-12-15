@@ -1,0 +1,35 @@
+﻿@model List<PROJETO01.Modelos.TipoJogos>
+
+<h3>
+    CADASTRO DE TIPOS DE JOGOS 
+    <a class="btn btn-sm btn-primary float-right" href="/TipoJogo/Adicionar">
+        + ADICIONAR
+    </a>
+</h3>
+
+<table class="table table-hover ">
+    <thead>
+        <tr>
+            <th>Tipo de Jogo</th>
+            <th>Descrição</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.codTipoJogo</td>
+                <td>@item.descrisaoTipoJogo</td>
+                <td>
+                    <a href="/TipoJogo/Editar?codTipoJogo=@item.codTipoJogo" class="btn btn-sm btn-warning">
+                        Editar
+                    </a>
+                    <a href="/TipoJogo/Excluir?codTipoJogo=@item.codTipoJogo" class="btn btn-sm btn-danger">
+                        Excluir
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,28 @@
+﻿@model PROJETO01.Modelos.Fornecedorjogos
+
+<form asp-controller="FornecedorJogos" asp-action="AdicionarConfirmacao" method="post">
+    <div class="mb-3">
+        <label for="codFornedor" class="form-label">Codigo do fornedor:</label>
+        <input asp-for="codFornecedor" type="number" class="form-control" placeholder="Digite o Codigo do fornecedor" />
+    </div>
+    <div class="mb-3">
+        <label for="nomefornecedor" class="form-label">nome do Fonecedor:</label>
+        <input asp-for="nomefornecedor" type="text" class="form-control" placeholder="Digite o nome do fornecedor" />
+    </div>
+
+    <div class="mb-3">
+        <label for="Descricaofornecedor" class="form-label">descricão do fornecedor:</label>
+        <input asp-for="Descricaofornecedor" type="text" class="form-control" placeholder="Digite uma descrição" />
+    </div>
+
+    <hr />
+
+    <a href="#" class="btn btn-secondary" onclick="javascript:history.back()">
+        VOLTAR
+    </a>
+
+    <button type="submit" class="btn btn-success float-right">
+        SALVAR
+    </button>
+
+</form>

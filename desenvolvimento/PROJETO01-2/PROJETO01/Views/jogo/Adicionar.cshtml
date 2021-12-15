@@ -1,0 +1,49 @@
+﻿@model PROJETO01.Modelos.jogo
+
+<form asp-controller="jogo" asp-action="AdicionarConfirmacao" method="post">
+    <div class="mb-3">
+        <label for="codJogo" class="form-label">Codigo do Jogo:</label>
+        <input asp-for="codJogo" type="text" class="form-control" placeholder="Digite o Codigo do Jogo" />
+    </div>
+    <div class="mb-3">
+        <label for="nomeDoJogo" class="form-label">Nome do Jogo:</label>
+        <input asp-for="nomeDoJogo" type="text" class="form-control" placeholder="Digite o nome do jogo" />
+    </div>
+        <div class="mb-3">
+        <label for="anolancamento" class="form-label">data de lançamento:</label>
+        <input asp-for="anolancamento" type="date" class="form-control" placeholder="DATA" />
+    </div>
+    <div class="mb-3">
+        <label for="Fornecedorjogos" class="form-label">Fornecedor:</label>
+        @Html.DropDownListFor(
+                item => item.codFornecedor,
+                new SelectList(ViewBag.Fornecedorjogos, "codFornecedor", "nomefornecedor"),
+                "-- Selecione --",
+                new { @class = "form-control" }
+            )
+    </div>
+    <div class="mb-3">
+        <label for="requisitos" class="form-label">Requisito Recomendados:</label>
+        <input asp-for="requisitos" type="text" class="form-control" placeholder="Digite os requisitos Recomendados" />
+    </div>
+    <div class="mb-3">
+        <label for="TipoJogos" class="form-label">Tipo de Jogo:</label>
+        @Html.DropDownListFor(
+                item => item.codTipoJogo,
+                new SelectList(ViewBag.TipoJogos, "codTipoJogo", "descrisaoTipoJogo"),
+                "-- Selecione --",
+                new { @class = "form-control" }
+            )
+    </div>
+
+    <hr />
+
+    <a href="#" class="btn btn-secondary" onclick="javascript:history.back()">
+        VOLTAR
+    </a>
+
+    <button type="submit" class="btn btn-success float-right">
+        SALVAR
+    </button>
+
+</form>

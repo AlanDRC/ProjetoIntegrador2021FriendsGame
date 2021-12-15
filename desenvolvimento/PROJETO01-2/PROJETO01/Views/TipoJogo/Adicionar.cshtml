@@ -1,0 +1,23 @@
+﻿@model PROJETO01.Modelos.TipoJogos
+
+    <form asp-controller="TipoJogo" asp-action="AdicionarConfirmacao" method="post">
+        <div class="mb-3">
+            <label for="codTipoJogo" class="form-label">Codigo Tipo Jogo:</label>
+            <input asp-for="codTipoJogo" type="text" class="form-control" placeholder="Digite o Codigo do Jogo" />
+        </div>
+        <div class="mb-3">
+            <label for="descrisaoTipoJogo" class="form-label">descrisao do Tipo Jogo:</label>
+            <input asp-for="descrisaoTipoJogo" type="text" class="form-control" placeholder="Digite a descrição tipo de jogo" />
+        </div>
+
+        <hr />
+
+        <a href="#" class="btn btn-secondary" onclick="javascript:history.back()">
+            VOLTAR
+        </a>
+
+        <button type="submit" class="btn btn-success float-right">
+            SALVAR
+        </button>
+
+    </form>

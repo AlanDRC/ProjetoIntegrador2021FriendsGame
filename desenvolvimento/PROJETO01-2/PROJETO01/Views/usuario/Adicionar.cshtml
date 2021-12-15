@@ -1,0 +1,43 @@
+﻿@model PROJETO01.Modelos.usuario
+
+<form asp-controller="usuario" asp-action="AdicionarConfirmacao" method="post">
+    <div class="mb-3">
+        <label for="codPlayer" class="form-label">Codigo do player:</label>
+        <input asp-for="codPlayer" type="text" class="form-control" placeholder="Digite o Codigo do player" />
+    </div>
+    <div class="mb-3">
+        <label for="IdLogin" class="form-label">ID de Login:</label>
+        <input asp-for="IdLogin" type="text" class="form-control" placeholder="Digite o ID" />
+    </div>
+
+    <div class="mb-3">
+        <label for="NickJogador" class="form-label">Digite seu Nick:</label>
+        <input asp-for="NickJogador" type="text" class="form-control" placeholder="Digite seu Nick" />
+    </div>
+
+        <div class="mb-3">
+        <label for="senha" class="form-label">Senha:</label>
+        <input asp-for="senha" type="password" class="form-control" placeholder="Digite sua senha" />
+    </div>
+
+    <div class="mb-3">
+        <label for="TipoJogos" class="form-label">Tipo de Jogo:</label>
+        @Html.DropDownListFor(
+                item => item.codJogo,
+                new SelectList(ViewBag.Jogo, "codJogo", "nomeDoJogo"),
+                "-- Selecione --",
+                new { @class = "form-control" }
+            )
+    </div>
+
+    <hr />
+
+    <a href="#" class="btn btn-secondary" onclick="javascript:history.back()">
+        VOLTAR
+    </a>
+
+    <button type="submit" class="btn btn-success float-right">
+        SALVAR
+    </button>
+
+</form>
